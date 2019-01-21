@@ -15,6 +15,6 @@ app.use(express.static('public'));
 var router = require("./router/applicationRouter.js");
 router.routing(app);
 
-app.listen(9999, function () {
+app.listen(process.env.PORT || 5000, function () {
     console.log("Chay thanh cong");
 });
