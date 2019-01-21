@@ -1,5 +1,6 @@
 var userController = require("../controller/userController.js");
 var productController = require("../controller/productController.js");
+var categoryController = require("../controller/categoryController.js");
 
 exports.routing = function (app) {
 
@@ -13,6 +14,11 @@ exports.routing = function (app) {
     app.get("/admin/product/list", productController.listProduct);
     app.get("/admin/product/create", productController.generateProductForm);
     app.post("/admin/product/save", productController.saveProduct);
+
+    // Khu vực xử lý quản lý sản phẩm của admin.
+    app.get("/admin/category/list", categoryController.list);
+    app.get("/admin/category/create", categoryController.generateForm);
+    app.post("/admin/category/save", categoryController.save);
     // app.get("/admin/product/edit", function (req, res) {
     //     res.render("admin/product/edit.ejs");
     // });

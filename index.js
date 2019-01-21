@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost:27017/mytable", {useNewUrlParser: true});
 mongoose.connect("mongodb://sa:abcd1234@ds159641.mlab.com:59641/shoptify", {useNewUrlParser: true});
 
-app.set("views", "pages");
+app.set("views", "views");
 app.set("views engine", "ejs");
 app.use(bodyParser.urlencoded());
 app.use(express.static('public'));
@@ -15,6 +15,6 @@ app.use(express.static('public'));
 var router = require("./router/applicationRouter.js");
 router.routing(app);
 
-app.listen(process.env.PORT || 5000, function () {
+app.listen(process.env.PORT || 9999, function () {
     console.log("Chay thanh cong");
 });
