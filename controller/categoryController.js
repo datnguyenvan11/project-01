@@ -15,9 +15,9 @@ exports.save = function (req, res) {
 }
 
 exports.list = function (req, res) {
-    Category.find({}, function (err, products) {
+    Category.find({}, function (err, list) {
         res.render("admin/category/list.ejs", {
-            "list": products
+            "list": list
         });
     });
 }
